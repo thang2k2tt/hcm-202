@@ -55,3 +55,79 @@ button:disabled {
 .blink-red {
     animation: bred 1s infinite;
 }
+
+/* Căn chỉnh và thiết kế tổng thể */
+#quiz-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Thiết kế cho câu hỏi */
+#question-container {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Thiết kế cho các nút lựa chọn câu trả lời */
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.answer-button:hover {
+    background-color: #45a049;
+}
+
+.answer-button.correct {
+    background-color: #4CAF50;
+}
+
+.answer-button.incorrect {
+    background-color: #f44336;
+}
+
+.answer-button.blink {
+    animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Thiết kế cho nút Tiếp theo */
+#next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #2196F3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#next-button:hover {
+    background-color: #0b79d0;
+}
