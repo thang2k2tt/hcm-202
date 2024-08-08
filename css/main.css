@@ -2750,4 +2750,128 @@
   .switch-wrap p {
     margin: 0;
   }
-  
+  .timeline {
+    width: 90%; /* Tăng độ rộng của timeline */
+    margin: 40px auto;
+    position: relative;
+}
+
+.timeline ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: flex-start; /* Đặt các mục ở đầu */
+}
+
+.timeline ul::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 4px;
+    background: #333;
+    z-index: 1;
+}
+
+.timeline ul li {
+    position: relative;
+    width: 200px; /* Tăng độ rộng của các mục */
+    text-align: center;
+    flex-shrink: 0; /* Ngăn các mục bị thu nhỏ */
+}
+
+.timeline ul li .content {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    font-size: 14px; /* Đảm bảo kích thước font đủ lớn */
+    color: #333; /* Đảm bảo màu chữ dễ đọc */
+}
+
+.timeline ul li .content::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.timeline ul li:last-child::after {
+  display: none; /* Ẩn đường nối cuối cùng */
+}
+.timeline ul li .time {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 2;
+    white-space: nowrap; /* Ngăn chặn cắt ngắn nội dung */
+}
+
+.timeline ul li:nth-child(odd) .time {
+    top: auto;
+    bottom: calc(100% + 10px);
+}
+
+#read-more {
+  background-color: #007BFF; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Không viền */
+  border-radius: 5px; /* Bo tròn góc */
+  padding: 10px 20px; /* Khoảng cách bên trong nút */
+  font-size: 16px; /* Kích thước chữ */
+  cursor: pointer; /* Con trỏ khi rê chuột */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển đổi */
+}
+
+#read-more:hover {
+  background-color: #0056b3; /* Màu nền khi rê chuột */
+  transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi rê chuột */
+}
+
+#read-more:active {
+  background-color: #003f7f; /* Màu nền khi nhấn chuột */
+  transform: scale(0.95); /* Hiệu ứng thu nhỏ nhẹ khi nhấn chuột */
+}
+
+#read-more:focus {
+  outline: none; /* Loại bỏ viền mặc định khi focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Tạo viền màu xanh khi focus */
+}
+
+.timeline ul li .content .hidden-text {
+  opacity: 0; /* Ẩn nội dung bằng cách làm mờ */
+  visibility: hidden; /* Ẩn nội dung khỏi layout */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Tạo hiệu ứng chuyển đổi */
+}
+
+.timeline ul li .content:hover .hidden-text {
+  opacity: 1; /* Hiện nội dung */
+  visibility: visible; /* Hiện nội dung trong layout */
+}
+
+.timeline ul li .content:hover {
+  cursor: pointer; /* Thay đổi con trỏ chuột để báo hiệu có thể tương tác */
+}
+
+.hidden-text{
+  color: black;
+}
+
