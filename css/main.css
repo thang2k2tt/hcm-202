@@ -2892,9 +2892,25 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .image-container {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
 }
+
+.image-container img {
+  max-width: 100%;
+  height: auto; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 
 .content-item p {
   font-size: 16px;
@@ -2914,4 +2930,26 @@ body.mobile-nav-active #mobile-nav-toggle {
   visibility: visible;
   transform: translateY(0);
 }
+/* Add your default timeline-item styles here */
+.timeline-item {
+  cursor: pointer;
+  /* Add other styles as needed */
+}
 
+/* Style for the active item */
+.timeline-item.active .timeline-content {
+  background-color: #f0f0f0; /* Change this color as needed */
+}
+
+/* Style for the content items */
+.content-item {
+  display: none;
+}
+
+/* Show the active content */
+.content-item.active {
+  display: block;
+}
+.timeline-item.active{
+  background-color: white !important;
+}

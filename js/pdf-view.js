@@ -96,16 +96,27 @@ document.addEventListener("DOMContentLoaded", function() {
   const contentItems = document.querySelectorAll(".content-item");
 
   timelineItems.forEach(item => {
-      item.addEventListener("click", function() {
-          // Ẩn tất cả các nội dung
-          contentItems.forEach(content => {
-              content.classList.remove("active");
-          });
-
-          // Hiển thị nội dung tương ứng
-          const targetId = this.getAttribute("data-target");
-          const targetContent = document.getElementById(targetId);
-          targetContent.classList.add("active");
+    item.addEventListener("click", function() {
+      // Remove active class from all timeline items
+      timelineItems.forEach(ti => {
+        ti.classList.remove("active");
       });
+
+      // Add active class to the clicked item
+      this.classList.add("active");
+
+      // Hide all content items
+      contentItems.forEach(content => {
+        content.classList.remove("active");
+      });
+
+      // Show the content corresponding to the clicked item
+      const targetId = this.getAttribute("data-target");
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+    });
   });
 });
+

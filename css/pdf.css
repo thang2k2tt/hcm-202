@@ -125,3 +125,7 @@ footer ul li:last-child{
 	font-size: 15px;
 	color: black;
 }
+.timeline-item.active {
+    background-color: #d3d3d3; /* Thay đổi màu nền theo ý muốn */
+    color: #000; /* Thay đổi màu chữ nếu cần */
+}
