@@ -2953,3 +2953,118 @@ body.mobile-nav-active #mobile-nav-toggle {
 .timeline-item.active{
   background-color: white !important;
 }
+/* Basic Button Style */
+#read-more {
+  background-color: #007bff; /* Primary color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding around text */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  text-align: center; /* Center text */
+  display: inline-block; /* Inline button */
+}
+
+/* Hover State */
+#read-more:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly increase button size */
+}
+
+/* Focus State */
+#read-more:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Add a subtle shadow */
+}
+
+/* Disabled State */
+#read-more:disabled {
+  background-color: #6c757d; /* Gray color */
+  cursor: not-allowed; /* Indicate non-clickable */
+}
+/* General Header Styles */
+#header {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 10px 0; /* Padding around header */
+}
+
+/* Header Top Section */
+.header-top {
+  background-color: #343a40; /* Dark background for top section */
+  color: white; /* White text color */
+  padding: 10px 0; /* Padding for top section */
+}
+
+.header-top .container {
+  max-width: 1200px; /* Maximum width of container */
+}
+
+.header-top-right ul {
+  list-style: none; /* Remove default list styles */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flexbox for alignment */
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.header-top-right ul li {
+  margin-left: 20px; /* Space between list items */
+}
+
+.header-top-right ul li a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 14px; /* Font size for links */
+}
+
+.header-top-right ul li a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Header Section */
+.container {
+  max-width: 1200px; /* Maximum width of container */
+  margin: 0 auto; /* Center container */
+}
+
+/* Logo Section */
+#logo img {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Menu */
+#nav-menu-container {
+  text-align: center; /* Center align navigation menu */
+}
+
+.nav-menu {
+  list-style: none; /* Remove default list styles */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center align menu items */
+}
+
+.nav-menu li {
+  margin: 0 15px; /* Space between menu items */
+}
+
+.nav-menu li a {
+  color: #007bff; /* Primary color for menu links */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 16px; /* Font size for menu links */
+  font-weight: bold; /* Bold text */
+  padding: 10px 15px; /* Padding around text */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transitions */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.nav-menu li a:hover,
+.nav-menu li.menu-active a {
+  color: white; /* Change text color on hover or active state */
+  background-color: #007bff; /* Background color on hover or active state */
+}
