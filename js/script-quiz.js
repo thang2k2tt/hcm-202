@@ -12,8 +12,7 @@ const questions = [
       { text: "B. Văn hóa cũng là 1 mặt trận", correct: false },
       { text: "C. Xây dựng chính trị: dân quyền", correct: false },
       {
-        text: "D. Văn hóa phải thiết thực phục vụ nhân dân, góp phần vào \n"
-         + "việc nâng cao đời sống vui tươi, lành mạnh của quần chúng",
+        text: "D. Văn hóa phải thiết thực phục vụ nhân dân,\ngóp phần vào việc nâng cao đời sống vui tươi, lành mạnh của quần chúng",
         correct: true,
       },
     ],
@@ -187,7 +186,6 @@ const questions = [
       { text: "D. Rất nên làm", correct: false },
     ],
   },
-  // Thêm các câu hỏi khác ở đây
 ];
 
 let currentQuestionIndex = 0;

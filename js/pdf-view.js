@@ -71,9 +71,7 @@ document.getElementById("previous").addEventListener("click", () => {
 // Load the PDF when the page loads
 window.addEventListener("load", () => {
   // Provide the path to your PDF file here
-  const fileId = "1nEYtrxsvIWr-kafk7b4h6Ay42qH5E-VX"; 
-  const apiKey = "AIzaSyDoQl-bgPLcPh7cus33QksS4iffjQ2xXg4";
-  const pdfPath = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${apiKey}`;
+  const pdfPath = `files/giaotrinh.pdf`;
 
   loadPDF(pdfPath);
 });
@@ -92,4 +90,22 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  const contentItems = document.querySelectorAll(".content-item");
+
+  timelineItems.forEach(item => {
+      item.addEventListener("click", function() {
+          // Ẩn tất cả các nội dung
+          contentItems.forEach(content => {
+              content.classList.remove("active");
+          });
+
+          // Hiển thị nội dung tương ứng
+          const targetId = this.getAttribute("data-target");
+          const targetContent = document.getElementById(targetId);
+          targetContent.classList.add("active");
+      });
+  });
 });
