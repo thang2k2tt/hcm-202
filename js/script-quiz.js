@@ -1,267 +1,118 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  const quizContent = document.getElementById("quiz-content");
+  const navButtons = document.getElementById("nav-buttons");
+  const finishAttemptButton = document.querySelector(".finish-attempt");
 
-const questions = [
-  {
-    question:
-      "Câu hỏi 1: Trong các luận điểm sau đây về văn hóa, luận điểm nào của HCM nói về chức năng của văn hóa?",
-    answers: [
-      {
-        text: "A. Kháng chiến hóa văn hóa, văn hóa hóa kháng chiến",
-        correct: false,
-      },
-      { text: "B. Văn hóa cũng là 1 mặt trận", correct: false },
-      { text: "C. Xây dựng chính trị: dân quyền", correct: false },
-      {
-        text: "D. Văn hóa phải thiết thực phục vụ nhân dân,\ngóp phần vào việc nâng cao đời sống vui tươi, lành mạnh của quần chúng",
-        correct: true,
-      },
-    ],
-  },
-  {
-    question:
-      'Câu hỏi 2: Hoàn thiện câu sau đây của HCM: "Văn hóa phải [...] cho quốc dân đi"',
-    answers: [
-      { text: "A. Mở đường", correct: false },
-      { text: "B. Chỉ đường", correct: false },
-      { text: "C. Soi đường", correct: true },
-      { text: "D. Dẫn đường", correct: false },
-    ],
-  },
-  {
-    question: "Câu hỏi 3: Theo HCM, chức năng của văn hóa là?",
-    answers: [
-      {
-        text: "A. Bồi dưỡng tư tưởng đúng đắn và tình cảm cao đẹp",
-        correct: false,
-      },
-      { text: "B. Nâng cao dân trí", correct: false },
-      {
-        text: "C. Bồi dưỡng những phẩm chất và phong cách tốt đẹp",
-        correct: false,
-      },
-      { text: "D. Tất cả đều đúng", correct: true },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 4: Theo HCM, muốn thức tỉnh 1 dân tộc trước hết phải thức tỉnh bộ phận dân cư nào?",
-    answers: [
-      { text: "A. Thanh niên", correct: true },
-      { text: "B. Trí thức", correct: false },
-      { text: "C. Phụ nữ", correct: false },
-      { text: "D. Nông dân", correct: false },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 5: Trong cách mạng dân tộc dân chủ nhân dân, nền văn hóa mới có những tính chất nào?",
-    answers: [
-      { text: "A. Dân tộc, đại chúng, hiện đại", correct: false },
-      { text: "B. Dân tộc, khoa học, dân chúng", correct: false },
-      { text: "C. Dân tộc, khoa học, đại chúng", correct: true },
-      { text: "D. Dân tộc, khoa học, quần chúng", correct: false },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 6: HCM đánh giá cao nhất yếu tố nào trong giá trị văn hóa dân tộc?",
-    answers: [
-      { text: "A. Lòng yêu nước", correct: false },
-      { text: "B. Ý thức đoàn kết cộng đồng", correct: false },
-      { text: "C. Lòng thương người", correct: false },
-      { text: "D. Yêu lao động", correct: true },
-    ],
-  },
-  {
-    question: "Câu hỏi 7: Tư tưởng đạo đức của HCM bắt nguồn từ?",
-    answers: [
-      { text: "A. Truyền thống đạo đức của dân tộc Việt Nam", correct: false },
-      {
-        text: "B. Kế thừa tư tưởng đạo đức phương Đông và tinh hoa văn hóa nhân loại",
-        correct: false,
-      },
-      {
-        text: "C. Tư tưởng đạo đức và những tấm gương đạo đức của Marx, Engels, Lenin",
-        correct: false,
-      },
-      { text: "D. Tất cả đều đúng", correct: true },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 8: Phẩm chất đạo đức cơ bản của con người Việt Nam trong thời đại mới theo tư tưởng HCM là?",
-    answers: [
-      {
-        text: "A. Trung với nước, hiếu với dân. Yêu thương con người",
-        correct: false,
-      },
-      { text: "B. Cần, kiệm, liêm, chính và chí công vô tư", correct: false },
-      { text: "C. Có tinh thần quốc tế trong sáng", correct: false },
-      { text: "D. Cả A, B và C", correct: true },
-    ],
-  },
-  {
-    question: "Câu hỏi 9: Con người theo quan niệm của HCM là?",
-    answers: [
-      {
-        text: "A. Vốn quý nhất, nhân tố quan trọng của cách mạng",
-        correct: false,
-      },
-      {
-        text: "B. Vốn quý nhất, nhân tố quyết định thành công của cách mạng",
-        correct: true,
-      },
-      { text: "C. Vốn quý của cách mạng", correct: false },
-      { text: "D. Động lực của cách mạng", correct: false },
-    ],
-  },
-  {
-    question: 'Câu hỏi 10: Theo HCM: "[...] là gốc của cách mạng"',
-    answers: [
-      { text: "A. Tài năng", correct: false },
-      { text: "B. Đạo đức", correct: true },
-      { text: "C. Bản lĩnh chính trị", correct: false },
-      { text: "D. Phẩm chất chính trị", correct: false },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 11: HCM đề cập đến đạo đức trong những quan hệ nào sau đây?",
-    answers: [
-      { text: "A. Đối với mình", correct: false },
-      { text: "B. Đối với người", correct: false },
-      { text: "C. Đối với việc", correct: false },
-      { text: "D. Cả A, B và C", correct: true },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 12: Theo tư tưởng HCM, để phát huy động lực con người, cần phải?",
-    answers: [
-      {
-        text: "A. Phát huy sức mạnh của cả cộng đồng dân tộc và sức mạnh của cá nhân người lao động",
-        correct: false,
-      },
-      {
-        text: "B. Phát huy sức mạnh đoàn kết của cả cộng đồng dân tộc",
-        correct: false,
-      },
-      { text: "C. Phát huy sức mạnh của cá nhân con người", correct: false },
-      { text: "D. Kêu gọi toàn dân", correct: true },
-    ],
-  },
-  {
-    question:
-      "Câu hỏi 13: Theo tư tưởng HCM, tính đại chúng của nền văn hóa được thể hiện ở chỗ?",
-    answers: [
-      {
-        text: "A. Nền văn hóa ấy phải phục vụ cho nhân dân và do nhân dân xây dựng nên",
-        correct: true,
-      },
-      { text: "B. Đó là 1 nền văn hóa đa dạng", correct: false },
-      {
-        text: "C. Đó là 1 nền văn hóa vượt ra khỏi biên giới quốc gia",
-        correct: false,
-      },
-      { text: "D. Đó là 1 nền văn hóa rộng lớn", correct: false },
-    ],
-  },
-  {
-    question:
-      'Câu hỏi 14: "Người cách mạng phải có [...], không có [...] thì dù tài giỏi đến mấy cũng không lãnh đạo được nhân dân"',
-    answers: [
-      { text: "A. Tài năng và đạo đức", correct: false },
-      { text: "B. Đạo đức cách mạng", correct: true },
-      { text: "C. Bản lĩnh chính trị", correct: false },
-      { text: "D. Uy tín", correct: false },
-    ],
-  },
-  {
-    question:
-      'Câu hỏi 15: "Bồi dưỡng thế hệ cách mạng cho đời sau là 1 việc [...] và rất cần thiết"',
-    answers: [
-      { text: "A. Không thể thiếu", correct: false },
-      { text: "B. Tương đối quan trọng", correct: true },
-      { text: "C. Rất quan trọng", correct: false },
-      { text: "D. Rất nên làm", correct: false },
-    ],
-  },
-];
-
-let currentQuestionIndex = 0;
-
-const questionContainer = document.getElementById("question-container");
-const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-button");
-const backButton = document.getElementById("back-button");
-function startQuiz() {
-  currentQuestionIndex = 0;
-  nextButton.classList.add("hide");
-  showQuestion(questions[currentQuestionIndex]);
-}
-
-function showQuestion(question) {
-  questionContainer.innerText = question.question;
-  answerButtons.innerHTML = "";
-  question.answers.forEach((answer) => {
-    const button = document.createElement("button");
-    button.innerText = answer.text;
-    button.classList.add("btn");
-    button.addEventListener("click", () => selectAnswer(answer));
-    answerButtons.appendChild(button);
-  });
-}
-
-function selectAnswer(answer) {
-  const correct = answer.correct;
-
-  // Tìm tất cả các nút câu trả lời
-  const buttons = answerButtons.querySelectorAll("button");
-
-  // Đổi màu nút theo kết quả
-  buttons.forEach((button) => {
-    if (button.innerText === answer.text) {
-      if (correct) {
-        button.classList.add("blink-green"); // Thêm lớp nhấp nháy xanh lá cây nếu đúng
-      } else {
-        button.classList.add("blink-red"); // Thêm lớp nhấp nháy đỏ nếu sai
+  // Shuffle the questions array and select 15 random questions
+  function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
       }
-    } else if (button.innerText === getCorrectAnswerText()) {
-      button.classList.add("blink-green"); // Thêm lớp nhấp nháy xanh lá cây cho câu trả lời đúng
-    }
-    // Vô hiệu hóa tất cả các nút sau khi chọn câu trả lời
-    button.disabled = true;
+      return array;
+  }
+
+  // Shuffle questions and select the first 15
+  const selectedQuestions = shuffle(questions).slice(0, 15);
+
+  selectedQuestions.forEach((question, index) => {
+      // Create question block
+      const questionDiv = document.createElement("div");
+      questionDiv.classList.add("question");
+
+      const questionText = document.createElement("p");
+      questionText.classList.add("question-text");
+      questionText.innerHTML = `<strong>Question ${index + 1}</strong><br>${question.question}`;
+      questionDiv.appendChild(questionText);
+
+      // Create form for answers
+      const form = document.createElement("form");
+      form.classList.add("question-form");
+
+      question.answers.forEach((answer, i) => {
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.id = `question${index + 1}_option${i + 1}`;
+          input.name = `question${index + 1}`;
+          input.value = answer.correct; // Store whether the answer is correct or not
+
+          const label = document.createElement("label");
+          label.setAttribute("for", input.id);
+          label.textContent = answer.text;
+
+          form.appendChild(input);
+          form.appendChild(label);
+          form.appendChild(document.createElement("br"));
+      });
+
+      questionDiv.appendChild(form);
+      quizContent.appendChild(questionDiv);
+
+      // Create navigation buttons
+      const navButton = document.createElement("button");
+      navButton.textContent = index + 1;
+      navButton.addEventListener("click", function () {
+          window.scrollTo({
+              top: questionDiv.offsetTop,
+              behavior: "smooth"
+          });
+      });
+
+      navButtons.appendChild(navButton);
   });
 
-  nextButton.classList.remove("hide");
-}
+  // Finish attempt button click event
+  finishAttemptButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
 
-function getCorrectAnswerText() {
-  // Tìm câu trả lời đúng của câu hỏi hiện tại
-  const question = questions[currentQuestionIndex];
-  const correctAnswer = question.answers.find((answer) => answer.correct);
-  return correctAnswer.text;
-}
+      let allAnswered = true;
 
-function nextQuestion() {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    showQuestion(questions[currentQuestionIndex]);
-    nextButton.classList.add("hide");
-  } else {
-    // Kết thúc quiz, có thể hiển thị điểm số
-    questionContainer.innerText = "Cảm ơn bạn đã hoàn thành quiz!";
-    answerButtons.innerHTML = "";
-    nextButton.classList.add("hide");
-  }
-}
-function backQuestion() {
-  if (currentQuestionIndex === 0) {
-  } else {
-    currentQuestionIndex--;
-    showQuestion(questions[currentQuestionIndex]);
-  }
-}
-nextButton.addEventListener("click", nextQuestion);
-backButton.addEventListener("click", backQuestion);
-startQuiz();
+      // Check if all questions are answered
+      selectedQuestions.forEach((question, index) => {
+          const form = document.querySelectorAll(".question-form")[index];
+          const selected = form.querySelector('input[type="radio"]:checked');
+
+          if (!selected) {
+              allAnswered = false;
+              window.scrollTo({
+                  top: form.parentElement.offsetTop,
+                  behavior: "smooth"
+              });
+              return false;
+          }
+      });
+
+      // If all questions are answered, evaluate the answers
+      if (allAnswered) {
+          selectedQuestions.forEach((question, index) => {
+              const form = document.querySelectorAll(".question-form")[index];
+              const selected = form.querySelector('input[type="radio"]:checked');
+              const correctAnswer = question.answers.find(answer => answer.correct).text;
+
+              const result = document.createElement("p");
+              result.classList.add("result");
+
+              if (selected.value === "true") {
+                  result.textContent = "Correct!";
+                  result.style.color = "green";
+              } else {
+                  result.textContent = `Incorrect! The correct answer is: ${correctAnswer}`;
+                  result.style.color = "red";
+              }
+
+              form.parentElement.appendChild(result);
+          });
+
+          // Optionally, disable further changes to the form after finishing
+          document.querySelectorAll('input[type="radio"]').forEach(input => {
+              input.disabled = true;
+          });
+
+          // Scroll to the top to show the results
+          window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+          });
+      }
+  });
+});

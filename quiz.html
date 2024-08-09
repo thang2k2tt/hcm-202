@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,6 +67,7 @@
             color: red;
             font-style: normal;
         }
+
     </style>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
@@ -78,19 +80,8 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style-quiz.css">
-    <link rel="stylesheet" href="css/pdf.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"
-        integrity="sha512-U5C477Z8VvmbYAoV4HDq17tf4wG6HXPC6/KM9+0/wEXQQ13gmKY2Zb0Z2vu0VNUWch4GlJ+Tl/dfoLOH4i2msw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-</head>
 
 <body>
 
@@ -102,9 +93,10 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li ><a href="index.html#home">Trang chủ</a></li>
-                        <li><a href="index.html#about">Giới thiệu</a></li>
-                        <li><a href="index.html#coffee">Tổng quan</a></li>
+                        <li ><a href="index.html">Trang chủ</a></li>
+                        <li><a href="index.html#about">Tiểu sử Bác </a></li>
+                        <li><a href="index.html#coffee">Tài liệu</a></li>
+                        <li><a href="index.html#gallery">Timeline</a></li>
                         <li><a href="index.html#slide">Nội dung chính</a></li>
                         <li><a href="index.html#cq">CQ</a></li>
                         <li class="menu-active"><a href="quiz.html">Quiz ôn tập</a></li>
@@ -115,15 +107,20 @@
     </header><!-- #header -->
 
 
-    <div id="quiz-container">
-        <div id="question-container">
-            <!-- Câu hỏi sẽ được chèn vào đây -->
+    <div class="quiz-container">
+        <div class="quiz-navigation">
+            <h3>Quiz Navigation</h3>
+            <br>
+            <div class="buttons" id="nav-buttons">
+                <!-- Navigation buttons will be dynamically generated -->
+            </div>
+            <a href="#" class="finish-attempt">Finish attempt ...</a>
         </div>
-        <div id="answer-buttons">
-            <!-- Các lựa chọn câu trả lời sẽ được chèn vào đây -->
+
+        <div class="quiz-content" id="quiz-content">
+            <!-- Questions will be dynamically loaded here -->
         </div>
-        <button id="back-button" class="btn">Trở lại</button>
-        <button id="next-button" class="btn">Tiếp theo</button>
+        
     </div>
 
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
@@ -148,6 +145,8 @@
     <script src="js/main.js"></script>
     <script src="https://app.tudongchat.com/js/chatbox.js"></script>
     <script type="text/javascript" src="js/pdf-view.js"></script>
+    <script src="js/question-data.js"></script>
     <script src="js/script-quiz.js"></script>
 </body>
+
 </html>
