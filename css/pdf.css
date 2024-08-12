@@ -184,3 +184,37 @@ footer ul li:last-child{
 .video-list ul li a:hover {
     color: #007bff;
 }
+#header {
+    background-color: #e0ddd8; /* Background color similar to the image */
+    padding: 20px 0; /* Add some padding */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    gap: 50px; /* Space between menu items */
+    
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu li a {
+    color: #000; /* Black text color */
+    text-decoration: none;
+    font-size: 16px; /* Adjust font size */
+}
+
+.nav-menu li.menu-active a {
+    font-weight: bold; /* Bold the active menu item */
+    border-bottom: 2px solid black; /* Underline the active menu item */
+    padding-bottom: 5px; /* Space between text and underline */
+}
+
+.nav-menu li a:hover {
+    font-weight: bold;
+    border-bottom: 2px solid black; /* Add underline on hover */
+    padding-bottom: 5px;
+}

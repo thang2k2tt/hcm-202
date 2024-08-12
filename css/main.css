@@ -3054,7 +3054,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .nav-menu li a {
-  color: #007bff; /* Primary color for menu links */
+  color: #007bff !important; /* Primary color for menu links */
   text-decoration: none; /* Remove underline from links */
   font-size: 16px; /* Font size for menu links */
   font-weight: bold; /* Bold text */
@@ -3065,6 +3065,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .nav-menu li a:hover,
 .nav-menu li.menu-active a {
-  color: white; /* Change text color on hover or active state */
+  color: white !important; /* Change text color on hover or active state */
   background-color: #007bff; /* Background color on hover or active state */
 }
