@@ -174,13 +174,7 @@
                 <div class="col-lg-12">
                     <div class="main-video-container text-center">
                         <video src="files/video-cq.mp4" controls></video>
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function () {
-                                const video = document.getElementById('video-cq');
-                                // Tạm dừng video khi trang được tải
-                                video.pause();
-                            });
-                        </script>
+                        
                         <p style="color: black;">Tổng bí thư: Văn hóa còn thì dân tộc còn | VTV24</p>
                         <div class="video-description highlighted-text">
                             <span style="color: black; font-weight: bold;">"Văn hóa còn thì dân tộc còn" nhấn mạnh tầm
@@ -351,17 +345,6 @@
     <script>
         const tudong_chatbox = new TuDongChat('DHUJLV3DQA-K6c1ddno9O')
         tudong_chatbox.initial()
-    </script>
-    <script>
-        const video_cq_element = document.querySelector('#video-cq');
-        // Get the src attribute of the iframe
-        let src = video_cq_element.getAttribute('src');
-
-        // Remove autoplay parameter if it exists
-        src = src.replace(/(\?|\&)autoplay=1/, '');
-
-        // Set the updated src back to the iframe
-        video_cq_element.setAttribute('src', src);
     </script>
 </body>
 
