@@ -2886,7 +2886,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .content-section {
   position: relative;
   padding: 0 20px;
-  height: 400px; /* Điều chỉnh chiều cao để phù hợp với nội dung của bạn */
+  height: 650px; /* Điều chỉnh chiều cao để phù hợp với nội dung của bạn */
   overflow: hidden; /* Ẩn nội dung vượt quá vùng hiển thị */
 }
 
