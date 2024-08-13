@@ -71,7 +71,7 @@ document.getElementById("previous").addEventListener("click", () => {
 // Load the PDF when the page loads
 window.addEventListener("load", () => {
   // Provide the path to your PDF file here
-  const pdfPath = `files/giaotrinh.pdf`;
+  const pdfPath = `/files/giaotrinh.pdf`;
 
   loadPDF(pdfPath);
 });
