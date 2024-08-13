@@ -126,7 +126,7 @@ footer ul li:last-child{
 	color: black;
 }
 .timeline-item.active {
-    background-color: #d3d3d3; /* Thay đổi màu nền theo ý muốn */
+    background-color: #faf8f2; /* Thay đổi màu nền theo ý muốn */
     color: #000; /* Thay đổi màu chữ nếu cần */
 }
 .main-video-container {
